@@ -2,7 +2,7 @@ title: Family Information
 
 sections:
     - title: Parents Phone Number
-    - rows:
+      rows:
       
       - fields:
           - label: Parent 1 
@@ -16,7 +16,7 @@ sections:
             type: text
  
     - title: 
-    - rows:
+      rows:
       - fields:          
         - label: Street Address
           name: street_address
@@ -32,7 +32,7 @@ sections:
           required: true
           
     - title: Emergency Contact Information
-    - rows:
+      rows:
       - fields:          
         - label: Name 
           name: ec_Name
