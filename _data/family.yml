@@ -1,0 +1,50 @@
+title: Family Information
+
+sections:
+    - title: Parents Phone Number
+    - rows:
+      
+      - fields:
+          - label: Parent 1 
+            name: parent_1_phone
+            type: text
+            flex: 2
+            required: true
+      - fields:
+          - label: parent 2
+            name: parent_2_phone
+            type: text
+ 
+    - title: 
+    - rows:
+      - fields:          
+        - label: Street Address
+          name: street_address
+          type: text
+          flex: 2
+          required: true
+
+      - fields:          
+        - label: Email Address
+          name: email_address
+          type: text
+          flex: 2
+          required: true
+          
+    - title: Emergency Contact Information
+    - rows:
+      - fields:          
+        - label: Name 
+          name: ec_Name
+          type: text
+          flex: 1
+          required: true
+
+      - fields:          
+        - label: Phone
+          name: ec_phone
+          type: text
+          flex: 1
+          required: true
+
+

@@ -1,0 +1,154 @@
+<div class="container">
+  <div class="step-number">{{ include.step }}</div>
+  <h2>{{ include.data.title }}</h2>
+
+  {% for section in include.data.sections %}
+
+  <div class="section">
+    {% if section.title %}
+    <h3>{{ section.title }}</h3>
+    {% endif %} {% for row in section.rows %}
+    <div class="row">
+      {% for field in row.fields %}
+      
+ 
+      
+       <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+
+        {% if field.label %}
+        <label>{{ field.label }} {% if field.required %} <span style="color: red">*</span>{% endif %}   </label> 
+        {% endif %} 
+
+      
+        {% if field.type == "select" %}
+
+        <select name="{{ field.name }}" {% if field.required %}required{% endif %} id="{{ field.name | replace: '.', '_' }}">
+          <option value="" disabled selected>Select...</option>
+          {% for opt in field.options %}
+          <option value="{{ opt }}">{{ opt }}</option>
+          {% endfor %}
+        </select>
+        
+
+        {% elsif field.type == "textarea" %}
+        <textarea
+          name="{{ field.name }}"
+          {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
+          id="{{ field.name | replace: '.', '_' }}"
+          style="height: 100px"
+          {% if field.required %}required{% endif %}></textarea>
+
+        {% elsif field.type == "yesno_with_details" %}
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+        
+          <select
+            name="{{ field.name }}"
+            id="{{ field.name | replace: '.', '_' }}"
+            class="yesno-trigger"
+            data-details="{{ field.detailsName }}"
+            style="flex: 1"
+            {% if field.required %}required{% endif %}>
+            <option ></option>
+            <option>Yes</option>
+            <option>No</option>
+          </select>
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+
+          <input
+            type="text"
+            name="{{ field.detailsName }}"
+            id="{{ field.detailsName | replace: '.', '_' }}"
+            placeholder="{{ field.placeholder | default: 'If yes, details' }}"
+            style="flex: 1"
+            disabled />
+                 
+                 
+ {% elsif field.type == "yesnopast_with_details" %}
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+        
+          <select
+            name="{{ field.name }}"
+            id="{{ field.name | replace: '.', '_' }}"
+            class="yesno-trigger"
+            data-details="{{ field.detailsName }}"
+            style="flex: 1"
+            {% if field.required %}required{% endif %}>
+            <option></option>
+            <option>Yes</option>
+            <option>No</option>
+            <option>Past</option>
+          </select>
+      </div>
+         <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+
+          <input
+            type="text"
+            name="{{ field.detailsName }}"
+            id="{{ field.detailsName | replace: '.', '_' }}"
+            placeholder="{{ field.placeholder | default: 'If yes or past, details' }}"
+            style="flex: 1"
+            disabled />
+
+           
+           {% elsif field.type == "modal_accept" %}
+      </div>
+  <div class="modal-field">
+
+    <button type="button" class="open-modal" data-target="{{ field.name }}" id="btn-{{ field.name | replace: '.', '_' }}">
+      {{ field.buttonText | default: "View & Accept" }}
+    </button>
+
+    <input 
+      type="hidden" 
+      name="{{ field.name }}" 
+      id="{{ field.name | replace: '.', '_' }}"
+      {% if field.required %}required{% endif %}
+    />
+
+    <div class="modal" id="modal-{{ field.name | replace: '.', '_' }}">
+      <div class="modal-content">
+        <button type="button" class="modal-close" data-target="{{ field.name }}">
+          x
+        </button>
+        <div class="modal-text">
+          {{ field.modalText }}
+        </div>
+
+        <button type="button" class="accept-btn" data-target="{{ field.name }}">
+          Accept
+        </button>
+
+      </div>
+    </div>
+
+  </div>
+   <div class="field-wrapper"   style="flex: {{ field.flex | default: 1 }}">
+
+
+
+        {% elsif field.type == "empty" %} {% else %}
+        
+           
+        <input
+          type="{{ field.type | default: 'text' }}"
+          name="{{ field.name }}"
+          id="{{ field.name | replace: '.', '_' }}"
+          {% if field.placeholder %} placeholder="{{ field.placeholder }}" {% endif %}
+          {% if field.required %}required{% endif %} />
+        {% endif %}
+      <!--here -->
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <!-- spacing between sections -->
+  <div class="row"></div>
+
+  {% endfor %}
+</div>
+<!-- spacing between containers -->
+<div class="row"></div>

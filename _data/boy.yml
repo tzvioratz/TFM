@@ -1,0 +1,25 @@
+title: בחור Information
+
+sections:
+    - rows:
+      - fields:
+          - label: First Name
+            name: fn
+            type: text
+            flex: 2
+            required: true
+
+          - label: Middle Initial
+            name: mi
+            type: text
+            
+          - label: Last Name
+            name: mi
+            type: text           
+      - fields:
+          - label: Yeshiva
+            name: Grade
+            type: number
+            flex: 2
+            required: true
+
