@@ -14,12 +14,19 @@ sections:
             type: text
             
           - label: Last Name
-            name: mi
-            type: text           
+            name: ln
+            type: text
+            required: true
       - fields:
           - label: Yeshiva
+            name: Yeshiva
+            type: text
+            flex: 2
+            required: true
+            
+          - label: Grade
             name: Grade
             type: number
-            flex: 2
+            flex: 1
             required: true
 

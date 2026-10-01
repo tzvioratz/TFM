@@ -5,227 +5,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Secure Form</title>
+<link rel="stylesheet" href="mainStyle.css">
 
-<style>
-/* =========================
-   YOUR EXISTING CSS (UNCHANGED)
-   ========================= */
-body {
-    font-family: Arial, sans-serif;
-    background: #eef6fb;
-    margin: 0;
-    padding: 20px;
-}
-
-.container {
-    position: relative;
-    max-width: 950px;
-    margin: auto;
-    background: #fff;
-    padding: 40px 25px 25px 25px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.step-number {
-    position: absolute;
-    top: -15px;
-    left: -15px;
-    width: 40px;
-    height: 40px;
-    background-color: #2a6f97;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 18px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-h2 { color: #2a6f97; margin-bottom: 15px; }
-
-.section {
-    background: #f7fbff;
-    padding: 15px 20px;
-    border-radius: 8px;
-    border: 1px solid #d6eaf8;
-    margin-bottom: 20px;
-}
-
-.row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 12px;
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-.field-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.field-wrapper input,
-.field-wrapper select,
-.field-wrapper textarea {
-    padding: 8px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-top: 4px;
-    height: 36px;
-    box-sizing: border-box;
-}
-
-.radio-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    height: 36px;
-}
-
-.radio-group label {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
-.inline-field {
-    flex-direction: row;
-    align-items: flex-end;
-    gap: 10px;
-}
-
-.inline-label {
-    white-space: nowrap;
-    margin: 0;
-    min-width: 180px;
-}
-
-label {
-    font-size: 13px;
-    color: #444;
-    margin-bottom: 2px;
-}
-
-button {
-    background-color: #2a6f97;
-    color: #fff;
-    border: none;
-    padding: 10px 18px;
-    font-size: 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: #1f5571;
-}
-
-/* =========================
-   ONLY ADDITIONS (SAFE)
-   ========================= */
-
-#loginBox {
-    max-width: 400px;
-    margin: auto;
-}
-
-#formContainer {
-    display: none;
-}
-
-#error {
-    color: red;
-    margin-top: 10px;
-    font-size: 13px;
-}
-  /* Loading state button */
-button.loading {
-    opacity: 0.7;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-/* Spinner */
-.spinner {
-    width: 14px;
-    height: 14px;
-    border: 2px solid #ffffff;
-    border-top: 2px solid transparent;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 8px;
-    animation: spin 0.8s linear infinite;
-    vertical-align: middle;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-  .modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.5);
-  z-index: 9999; 
-}
-
-.modal-content {
-  background: white;
-  max-width: 600px;
-  margin: 5% auto;
-  padding: 20px;
-  border-radius: 8px;
-  max-height: 70vh;
-  overflow-y: auto;
-  z-index: 10000; 
-  position: relative;
-
-}
-
-.modal-text {
-  margin-bottom: 20px;
-  white-space: pre-line;
-  line-height: 1.5;
-}
-  
-.modal-close {
-  position: absolute;
-  top: 10px;
-  right: 12px;
-  background: transparent;
-  border: none;
-  font-size: 22px;
-  cursor: pointer;
-  color: #666;
-}
-
-.modal-close:hover {
-  color: #000;
-}
-</style>
 </head>
 
 <body>
 
 
 
-<!-- =========================
-     REAL FORM (HIDDEN INITIALLY)
-     ========================= -->
-<div id="formContainer" class="container" style="display: block">
+
+<div class="form-page">
+
+  <div class="form-header">
+    <div class="form-eyebrow">THE MISHMAR</div>
+    <h1>Sign Up</h1>
+    
+  </div>
+
+  <div id="formContainer" class="form-container">
     
     <form id="mainForm" method="POST"  action="" onsubmit="submitted=true;">
       <input type="hidden" name="password" id="hiddenPassword">
@@ -235,8 +32,8 @@ button.loading {
 <input type="hidden" name="city" id="city">
 <input type="hidden" name="region" id="region">
 <input type="hidden" name="country" id="country">
-            {% include form-container.html step="1" data=site.data.boy %}
-            {% include form-container.html step="2" data=site.data.family %}
+            {% include form-container2.html step="1" data=site.data.boy %}
+            {% include form-container2.html step="2" data=site.data.family %}
 
 
            
@@ -246,14 +43,14 @@ button.loading {
                 <div class="section">
                   <div class="row">
                       <div class="field-wrapper">
-                          <button id="submitBtn" type="submit">Submit</button>
+                          <button id="submitBtn" type="submit" class="hero-action form-submit">Submit</button>
                       </div>
                   </div>
               </div>
             </div>
         </form>
 </div>
-  
+  </div>
   
 <!-- Add this anywhere in your <body> -->
 <div id="loading-overlay" style="display: none;">
@@ -262,23 +59,7 @@ button.loading {
 
 
 <script>
-  function setLoading(isLoading) {
-    const btn = document.getElementById("loginBtn");
 
-    if (isLoading) {
-        btn.classList.add("loading");
-        btn.innerHTML = `<span class="spinner"></span>Logging in...`;
-    } else {
-        btn.classList.remove("loading");
-        btn.innerHTML = `Login`;
-    }
-}
-  document.getElementById("password").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault(); // stops form submit / page reload
-        login();
-    }
-});
   
 
   document.addEventListener("DOMContentLoaded", function () {
