@@ -49,6 +49,30 @@
       </article>
       
     </div>
+    
+  </section>
+  <div class="gold-line"></div>
+  
+  <section class="section intro" id="locations">
+    <h2>Our Locations</h2>
+    
+    <div class="cards">
+      {% for location in site.locations %}
+      <a href="{{ location.url }}" class="hero-action">
+      <article class="card ">
+        <h3>{{ location.title }}</h3>
+        <img
+                src="/locations/{{ location.title }}/location.jpg"
+              alt="{{ location.title }}"
+            >
+        {% if location.address %}
+              <p>{{ location.address }}</p>
+            {% endif %}
+      </article>
+      </a>
+       {% endfor %}
+      
+    </div>
   </section>
 
   <section class="section" id="details">
@@ -58,7 +82,10 @@
         <div class="label">Administrators</div>
         <div class="value">R’ Refoel Schellemberg <br> R’ Nosson Mandel <br> R’ Sruly Possick</div>
       </div>
+      
+      
     </div>
+
   </section>
 </main>
 
