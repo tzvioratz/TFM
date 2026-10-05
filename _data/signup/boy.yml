@@ -36,3 +36,11 @@ sections:
             options: [Flatbush ,Marine Park ,Kensington  ,Monsey ,Staten Island]
             flex: 2
             required: true
+            
+      - fields:
+          - label: Mishmar Rebbe
+            name: Rebbe
+            type: text
+            flex: 2
+            required: true
+            
