@@ -8,5 +8,4 @@ image: location.jpg
 location_name: ATERES CHASHA FRAIDEL
 head_phone: 732-228-3551
 
-
 ---
