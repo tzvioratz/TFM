@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <link rel="stylesheet" href="/mainStyle.css">
+  <link rel="stylesheet" href="/locationStyle.css">
+</head>
+
+<body>
+
+  <header class="location-header">
+    {% include nav %}
+  </header>
+
+  <main class="location-page">
+
+    <section class="location-hero">
+
+      {% if page.image %}
+      <div class="location-image">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.title }}"
+        >
+      </div>
+      {% endif %}
+
+      <div class="location-info">
+
+        <p class="location-eyebrow">THE MISHMAR</p>
+
+        <h1>{{ page.title }}</h1>
+
+        {% if page.address %}
+        <div class="location-detail">
+          <h2>Location</h2>
+          <p>{{ page.address }}</p>
+        </div>
+        {% endif %}
+
+        {% if page.location_head %}
+        <div class="location-detail">
+          <h2>Location Head</h2>
+          <p>{{ page.location_head }}</p>
+        </div>
+        {% endif %}
+
+        {% if page.google_maps %}
+        <a
+          href="{{ page.google_maps }}"
+          class="location-map-button"
+          target="_blank"
+          rel="noopener"
+        >
+          VIEW ON GOOGLE MAPS
+        </a>
+        {% endif %}
+
+      </div>
+
+    </section>
+
+    {% if content != "" %}
+    <section class="location-content">
+      {{ content }}
+    </section>
+    {% endif %}
+
+  </main>
+
+{% include footer %}
+
+</body>
+</html>
