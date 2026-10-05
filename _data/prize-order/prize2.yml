@@ -3,18 +3,19 @@ title: Prize Information
 sections:
     - rows:
       - fields:
-          - label: What Site?
+          - label: What Website?
             name: site
             type: select
-            flex: [Amazon, Z-Berman]
+            options: [Amazon, Z-Berman]
             required: true
 
           - label: Link
             name: link
             type: text
+            required: true
             
           - label: Comment
             name: comment
             type: text
-            required: true
+            
 

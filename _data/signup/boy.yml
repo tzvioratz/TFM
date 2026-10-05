@@ -42,5 +42,5 @@ sections:
             name: Rebbe
             type: text
             flex: 2
-            required: true
+            
             
