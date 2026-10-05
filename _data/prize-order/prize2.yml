@@ -1,0 +1,20 @@
+title: Prize Information
+
+sections:
+    - rows:
+      - fields:
+          - label: What Site?
+            name: site
+            type: select
+            flex: [Amazon, Z-Berman]
+            required: true
+
+          - label: Link
+            name: link
+            type: text
+            
+          - label: Comment
+            name: comment
+            type: text
+            required: true
+

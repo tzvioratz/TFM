@@ -620,9 +620,13 @@ button.hero-action.open-modal.accepted:hover {
   border-color: rgba(150, 195, 160, 0.8);
   color: #d0e6d4;
 }
+.left-align p {
+  text-align: left;
+}
 
-
-
+.intro.left-align p {
+  text-align: left;
+}
 
 /* =========================================================
    FORM MOBILE
