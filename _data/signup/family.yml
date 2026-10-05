@@ -8,21 +8,20 @@ sections:
           - label: Parent 1 
             name: parent_1_phone
             type: text
-            flex: 2
+            flex: 1
             required: true
-      - fields:
+            
           - label: parent 2
             name: parent_2_phone
             type: text
- 
-    - title: null
-      rows:
-      - fields:          
+      - fields:
         - label: Street Address
           name: street_address
           type: text
           flex: 2
           required: true
+      - fields:          
+
 
       - fields:          
         - label: Email Address
@@ -30,21 +29,7 @@ sections:
           type: text
           flex: 2
           required: true
+
+ 
+
           
-    - title: Emergency Contact Information
-      rows:
-      - fields:          
-        - label: Name 
-          name: ec_Name
-          type: text
-          flex: 1
-          required: true
-
-      - fields:          
-        - label: Phone
-          name: ec_phone
-          type: text
-          flex: 1
-          required: true
-
-

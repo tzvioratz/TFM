@@ -1,0 +1,20 @@
+title: Emergency Contact Information
+
+sections:
+    - title: null
+      rows:
+      - fields:          
+        - label: Name 
+          name: ec_Name
+          type: text
+          flex: 1
+          required: true
+
+      - fields:          
+        - label: Phone
+          name: ec_phone
+          type: text
+          flex: 1
+          required: true
+
+

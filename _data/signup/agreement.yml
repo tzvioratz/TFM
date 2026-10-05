@@ -1,0 +1,27 @@
+title: Program Rules
+
+sections:
+    - title: null
+      rows:
+      - fields:
+        - label: Agreement
+          type: modal_accept
+          name: agreement
+          buttonText: View & Accept
+          modalText: |
+           Program Rules
+           
+           To preserve the atmosphere and ensure that every participant can benefit from the program, the following rules apply at every Mishmar location:
+           
+           ◆  No phones or other personal technology during the program.
+           
+           ◆  No vapes or vaping devices.
+           
+           ◆  No pocket knives, BB guns, 3D-printed guns, weapons, or other dangerous items.
+           
+           ◆  Participants must remain inside the program area and may not leave or hang around outside during program time.
+           
+           ◆  Every participant must be properly registered. Program rules and expectations must be reviewed and signed by a parent or guardian.
+          required: true
+
+           

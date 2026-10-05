@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Secure Form</title>
+<title>Sign up</title>
 <link rel="stylesheet" href="mainStyle.css">
 
 </head>
@@ -32,8 +32,10 @@
 <input type="hidden" name="city" id="city">
 <input type="hidden" name="region" id="region">
 <input type="hidden" name="country" id="country">
-            {% include form-container2.html step="1" data=site.data.boy %}
-            {% include form-container2.html step="2" data=site.data.family %}
+            {% include form-container2.html step="1" data=site.data.signup.boy %}
+            {% include form-container2.html step="2" data=site.data.signup.family %}
+            {% include form-container2.html step="3" data=site.data.signup.emergency %}
+            {% include form-container2.html step="4" data=site.data.signup.agreement %}
 
 
            
@@ -132,7 +134,7 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
       //  update UI state
       if (button) {
         button.textContent = "Accepted ✓";
-        button.style.backgroundColor = "#4CAF50";
+        button.classList.add("accepted");
         document.body.style.overflow = "auto";
       }
     }
@@ -152,7 +154,7 @@ document.querySelectorAll(".accept-btn").forEach(btn => {
 
       if (button) {
         button.textContent = "Accepted ✓";
-        button.style.backgroundColor = "#4CAF50";
+        button.classList.add("accepted");
       }
     }
   });

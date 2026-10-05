@@ -29,4 +29,10 @@ sections:
             type: number
             flex: 1
             required: true
-
+      - fields:
+          - label: Mishmar Location
+            name: Location
+            type: select
+            options: [Flatbush ,Marine Park ,Kensington  ,Monsey ,Staten Island]
+            flex: 2
+            required: true
