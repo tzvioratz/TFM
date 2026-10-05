@@ -3,7 +3,6 @@ _site
 .jekyll-cache
 .jekyll-metadata
 vendor
-_config.yml
 _posts/2026-09-30-welcome-to-jekyll.markdown
 about.markdown
 Gemfile.lock
