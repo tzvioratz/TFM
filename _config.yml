@@ -22,8 +22,8 @@ title: The Mishmar
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
  The Mishmar is a structured nighttime Torah program created for boys in grades 5 through 9, with a focus on giving each boy a warm, positive, and meaningful connection to Torah and to a dedicated yungerman. Each night, the boys learn in small groups with a yungerman who gets to know them personally, encourages their growth, and becomes a steady, approachable presence in their lives. Beyond the regular group learning, every boy has a monthly one-on-one session, helping build a genuine relationship and connection in an atmosphere that is warm, geshmak, and growth-oriented. The program combines serious learning with positive incentives and a strong sense of belonging: snacks are provided, Thursday night features hot food, and boys can earn points toward rewards from Amazon or ZB Bookstore. Special highlights throughout the year include Chanukah and Purim parties, an end-of-year dinner, and an end-of-year trip. With six locations across the Tri-State area, The Mishmar is designed to give boys a consistent place to learn, connect, and grow - while giving parents the confidence that their sons are spending their evenings in a healthy, uplifting Torah environment.
-url: "https://tzvioratz.github.io"
-baseurl: "/TFM"
+url: ""
+baseurl: ""
 
 # Build settings
 theme: minima
