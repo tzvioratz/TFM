@@ -1,0 +1,111 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | The Mishmar</title>
+
+  <link rel="stylesheet" href="mainStyle.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+{% include nav %}
+  <main class="login-page">
+
+    <div class="login-box">
+
+      <div class="form-eyebrow">THE MISHMAR</div>
+
+      <h1>Login</h1>
+
+      <div class="gold-line"></div>
+
+      <form id="loginForm">
+
+        <div class="login-field">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            autocomplete="username"
+            required
+          >
+        </div>
+
+        <div class="login-field">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            autocomplete="current-password"
+            required
+          >
+        </div>
+
+        <input type="hidden" name="action" id="action" value="login">
+        <button type="submit" class="hero-action login-button">
+          LOGIN
+        </button>
+
+      </form>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx-Soougd-lsY5TCstQeMKwRCD6l3xN1rUt9RgdLI4MkgtqStnt6ZTQZft3zeO3FJSc0A/exec";
+
+    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      try {
+
+        const response = await fetch(APP_SCRIPT_URL, {
+          method: "POST",
+
+          body: new URLSearchParams({
+            username: username,
+            password: password
+          })
+        });
+
+        const url = (await response.text()).trim();
+
+        if (url) {
+
+          window.location.href = url;
+
+        } else {
+
+          alert("wrong password, please try again");
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        alert("Unable to connect. Please try again.");
+
+      }
+
+    });
+
+  </script>
+{% include footer %}
+</body>
+</html>
