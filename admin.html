@@ -61,51 +61,43 @@
   </main>
 
 
-  <script>
+<script>
 
-    const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx-Soougd-lsY5TCstQeMKwRCD6l3xN1rUt9RgdLI4MkgtqStnt6ZTQZft3zeO3FJSc0A/exec";
+  const APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx-Soougd-lsY5TCstQeMKwRCD6l3xN1rUt9RgdLI4MkgtqStnt6ZTQZft3zeO3FJSc0A/exec";
 
-    document.getElementById("loginForm").addEventListener("submit", async function(event) {
+  document.getElementById("loginForm").addEventListener("submit", async function(event) {
 
-      event.preventDefault();
+    event.preventDefault();
 
-      const username = document.getElementById("username").value;
-      const password = document.getElementById("password").value;
+    const formData = new FormData(this);
 
-      try {
+    try {
 
-        const response = await fetch(APP_SCRIPT_URL, {
-          method: "POST",
+      const response = await fetch(APP_SCRIPT_URL, {
+        method: "POST",
+        body: new URLSearchParams(formData)
+      });
 
-          body: new URLSearchParams({
-            username: username,
-            password: password
-          })
-        });
+      const result = (await response.text()).trim();
 
-        const url = (await response.text()).trim();
+      console.log("Apps Script response:", result);
 
-        if (url) {
-
-          window.location.href = url;
-
-        } else {
-
-          alert("wrong password, please try again");
-
-        }
-
-      } catch (error) {
-
-        console.error(error);
-
-        alert("Unable to connect. Please try again.");
-
+      if (result) {
+        window.location.href = result;
+      } else {
+        alert("wrong password, please try again");
       }
 
-    });
+    } catch (error) {
 
-  </script>
+      console.error("Login error:", error);
+      alert("Unable to connect. Please try again.");
+
+    }
+
+  });
+
+</script>
 {% include footer %}
 </body>
 </html>
