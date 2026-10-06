@@ -1,0 +1,49 @@
+---
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Thank You | The Mishmar</title>
+
+  <link rel="stylesheet" href="mainStyle.css">
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+{% include nav %}
+
+  <main class="login-page">
+
+    <div class="login-box">
+
+      <div class="form-eyebrow">THE MISHMAR</div>
+
+      <h1>Thank You</h1>
+
+      <div class="gold-line"></div>
+
+      <p class="thank-you-text">
+        Thank you for your submission.
+      </p>
+
+      <p class="thank-you-subtext">
+        We have received your information and will be in touch with you soon.
+      </p>
+
+      <a href="{{ '/' | relative_url }}" class="hero-action thank-you-button">
+        RETURN HOME
+      </a>
+
+    </div>
+
+  </main>
+
+{% include footer %}
+
+</body>
+</html>
