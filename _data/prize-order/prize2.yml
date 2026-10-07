@@ -9,8 +9,8 @@ sections:
             options: [Amazon, Z-Berman]
             required: true
 
-          - label: Link
-            name: link
+          - label: Amazon link, or Z-Berman Gift card amount
+            name: Prize
             type: text
             required: true
             
