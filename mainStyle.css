@@ -267,6 +267,20 @@
   }
   }
 
+@media (max-width: 600px) {
+  .hero-content h1 {
+    display: none;
+  }
+ 
+  .hero {
+    min-height: 420px;
+  }
+
+  .hero-content {
+    bottom: 25px;
+  }
+}
+
 /* =========================================================
    MISHMAR SIGN-UP FORM
    ========================================================= */
