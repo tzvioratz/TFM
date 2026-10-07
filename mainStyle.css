@@ -490,11 +490,7 @@
 }
 
 
-/* 
-   Buttons:
-   Your form buttons already have .hero-action,
-   so we DON'T recreate the button design here.
-*/
+
 
 .form-button {
   cursor: pointer;

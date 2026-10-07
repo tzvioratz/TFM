@@ -4,17 +4,17 @@ sections:
     - rows:
       - fields:
           - label: First Name
-            name: fn
+            name: First_Name
             type: text
             flex: 2
             required: true
 
-          - label: Middle Initial
-            name: mi
+          - label: Middle Name
+            name: Middle_Name
             type: text
             
           - label: Last Name
-            name: ln
+            name: Last_Name
             type: text
             required: true
       - fields:
