@@ -1,0 +1,26 @@
+title: Prize Order Rules
+
+sections:
+    - rows:
+
+      - fields:
+          - label: 
+            type: modal_accept
+            name: agreement
+            buttonText: View & Accept
+            modalText: |
+             
+             Amazon: 5 points per dollar
+             ZB: 4 points per dollar
+             
+             Prizes are ordered once a month, on Rosh Chodesh.
+
+             Order Deadline: All prize orders must be submitted by the Tuesday before Rosh Chodesh. Orders submitted after the deadline will be processed during the next ordering cycle.
+             
+             Points Deadline: Points must be brought to your location’s Program Director or Rebbe by Wednesday before Rosh Chodesh in order to be used during that ordering cycle.
+
+             Please be sure to meet all deadlines to ensure your prize is ordered on time!
+            required: true
+
+
+
